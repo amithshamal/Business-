@@ -1,6 +1,7 @@
 // src/components/BusinessForm.jsx
 
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const BusinessForm = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const BusinessForm = () => {
     city: '',
     zip: '',
   });
+  const [message, setMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -22,30 +25,35 @@ const BusinessForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const response = await fetch('http://127.0.0.1:8000/api/business-forms', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    try {                                   
+      const response = await axios.post('http://127.0.0.1:8000/api/business-forms', formData);
 
-      if (response.ok) {
+      if (response.status === 201) {
         console.log('Data saved successfully!');
+        setMessage('Data saved successfully!');
+        setIsError(false);
         // Optionally, redirect or show a success message
       } else {
         console.error('Error saving data:', response.status);
+        setMessage('Error saving data.');
+           setIsError(true);
         // Optionally, show an error message
       }
     } catch (error) {
       console.error('Error:', error);
+      setMessage('Error: '+ error.message);
+      setIsError(true);
       // Optionally, show an error message
     }
   };
 
   return (
     <div className="form-container">
+       {message && (
+        <div className= {`message ${isError ? 'error' : 'success'}`}>
+          {message}
+        </div>
+      )}
       {/* Progress Steps */}
       <div className="progress-steps-container">
         <div className="progress-steps">

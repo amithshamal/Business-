@@ -18,6 +18,7 @@ git clone git@github.com:amithshamal/Business-.git
 1.  **Install Composer dependencies:**
 
     ```shell
+    cd backend
     composer install
     ```
 
@@ -28,6 +29,7 @@ git clone git@github.com:amithshamal/Business-.git
         ```shell
         cp .env.example .env
         ```
+    *  create database name business
 
     *   Edit the `.env` file with your database credentials:
 
@@ -68,13 +70,14 @@ git clone git@github.com:amithshamal/Business-.git
 1.  **Install Node.js dependencies:**
 
     ```shell
+    cd frontend
     npm install
     ```
 
 2.  **Run the development server:**
 
     ```shell
-    npm start
+    npm run dev
     ```
 
     The frontend will be accessible at `http://localhost:5173`.
