@@ -25,8 +25,8 @@ const BusinessForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {                                   
-      const response = await axios.post('http://127.0.0.1:8000/api/business-forms', formData);
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/business-forms', formData);
 
       if (response.status === 201) {
         console.log('Data saved successfully!');
@@ -36,12 +36,12 @@ const BusinessForm = () => {
       } else {
         console.error('Error saving data:', response.status);
         setMessage('Error saving data.');
-           setIsError(true);
+        setIsError(true);
         // Optionally, show an error message
       }
     } catch (error) {
       console.error('Error:', error);
-      setMessage('Error: '+ error.message);
+      setMessage('Error: ' + error.message);
       setIsError(true);
       // Optionally, show an error message
     }
@@ -49,8 +49,8 @@ const BusinessForm = () => {
 
   return (
     <div className="form-container">
-       {message && (
-        <div className= {`message ${isError ? 'error' : 'success'}`}>
+      {message && (
+        <div className={`message ${isError ? 'error-message' : 'success-message'}`}>
           {message}
         </div>
       )}

@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\BusinessForm;
-use Illuminate\Http\Request;
+use App\Http\Requests\BusinessFormRequest;
 use Illuminate\Http\JsonResponse;
 
 class BusinessFormController extends Controller
 {
-    public function store(Request $request): JsonResponse
+    public function store(BusinessFormRequest $request): JsonResponse
     {
+
         $businessForm = new BusinessForm();
         $businessForm->business_address = $request->input('business-address');
         $businessForm->business_type = $request->input('business-type');
