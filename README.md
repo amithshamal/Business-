@@ -4,9 +4,9 @@ This project consists of a frontend (React) and a backend (Laravel) application 
 
 **Clone the repository:**
 
-    ```shell
-    git clone git@github.com:amithshamal/Business-.git
-    ```
+```shell
+git clone git@github.com:amithshamal/Business-.git
+```
 
 
 ## Table of Contents
