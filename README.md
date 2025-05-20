@@ -2,27 +2,26 @@
 
 This project consists of a frontend (React) and a backend (Laravel) application for handling business form data.
 
+**Clone the repository:**
+
+    ```shell
+    git clone git@github.com:amithshamal/Business-.git
+    ```
+
+
 ## Table of Contents
 
 -   [Backend Setup (Laravel)](#backend-setup-laravel)
 -   [Frontend Setup (React)](#frontend-setup-react)
 
 ## Backend Setup (Laravel)
-
-1.  **Clone the repository:**
-
-    ```shell
-    git clone <repository-url>
-    cd backend
-    ```
-
-2.  **Install Composer dependencies:**
+1.  **Install Composer dependencies:**
 
     ```shell
     composer install
     ```
 
-3.  **Configure the environment:**
+2.  **Configure the environment:**
 
     *   Copy the `.env.example` file to `.env`:
 
@@ -47,17 +46,17 @@ This project consists of a frontend (React) and a backend (Laravel) application 
         php artisan key:generate
         ```
 
-4.  **Database Migration:**
+3.  **Database Migration:**
 
     ```shell
     php artisan migrate
     ```
 
-5.  **API Routes:**
+4.  **API Routes:**
 
     *   The API routes are defined in `routes/api.php`.
 
-6.  **Run the development server:**
+5.  **Run the development server:**
 
     ```shell
     php artisan serve
@@ -66,22 +65,13 @@ This project consists of a frontend (React) and a backend (Laravel) application 
     The backend will be accessible at `http://127.0.0.1:8000`.
 
 ## Frontend Setup (React)
-
-1.  **Clone the repository:**
-
-    ```shell
-    git clone <repository-url>
-    cd frontend
-    ```
-
-2.  **Install Node.js dependencies:**
+1.  **Install Node.js dependencies:**
 
     ```shell
     npm install
     ```
 
-
-5.  **Run the development server:**
+2.  **Run the development server:**
 
     ```shell
     npm start
